@@ -56,7 +56,7 @@ a {
 
 section {
     padding: 5rem 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .section-title {
@@ -436,52 +436,6 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Skills */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.skill-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-.skill-header h3 {
-    color: var(--text-dark);
-}
-
-.skill-card ul {
-    list-style: none;
-}
-
-.skill-card ul li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-gray);
-    transition: transform 0.2s ease;
-}
-
-.skill-card ul li:hover {
-    transform: translateX(5px);
-    color: var(--primary-color);
-}
-
-.skill-card ul li::before {
-    content: '•';
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
-    font-size: 1.5rem;
-    line-height: 1;
-    top: -4px;
-}
-
 /* Languages */
 .languages-card {
     max-width: 800px;
@@ -811,6 +765,257 @@ section {
     font-size: 0.9rem;
 }
 
+/* Skills & Expertise */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.expertise-card {
+    text-align: center;
+    padding: 2rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-light), var(--primary-color), var(--primary-light));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.expertise-card:hover::before {
+    transform: scaleX(1);
+}
+
+.expertise-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary-light), rgba(167, 139, 250, 0.3));
+    color: var(--primary-color);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.expertise-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.expertise-card:hover .expertise-icon {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: var(--white);
+}
+
+.expertise-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.expertise-card p {
+    color: var(--text-gray);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+/* Responsive for expertise */
+@media (max-width: 1024px) {
+    .expertise-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tools Section */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    text-align: center;
+    padding: 1.75rem 1rem;
+    position: relative;
+    cursor: default;
+    overflow: visible;
+}
+
+.tool-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-light), var(--primary-color), var(--primary-light));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.tool-card:hover::after {
+    transform: scaleX(1);
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 1.5px solid var(--border-color);
+}
+
+.tool-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.tool-card:hover .tool-icon {
+    transform: translateY(-6px) rotate(-5deg);
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.tool-card h4 {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.tool-card:hover h4 {
+    color: var(--primary-color);
+}
+
+/* AI Agents Popup */
+.ai-agents-card {
+    overflow: hidden;
+}
+
+.ai-agents-card .tool-icon,
+.ai-agents-card h4 {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.ai-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1rem 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.ai-agents-card:hover .tool-icon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.ai-agents-card:hover h4 {
+    opacity: 0;
+}
+
+.ai-agents-card:hover .ai-list {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ai-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.35rem;
+    border-radius: 6px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.ai-item:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.ai-item svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.ai-item span {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
 /* Published Work */
 .section-subtitle {
     text-align: center;
@@ -948,7 +1153,6 @@ section {
 @media (max-width: 768px) {
     .about-grid,
     .strengths-cards,
-    .skills-grid,
     .contact-grid,
     .footer-container {
         grid-template-columns: 1fr;
