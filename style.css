@@ -1128,6 +1128,80 @@ section {
     gap: 0.75rem;
 }
 
+/* Certifications Section */
+.certifications-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.certification-card {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+}
+
+.cert-badge {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cert-badge i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.cert-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-dark);
+}
+
+.cert-content h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.cert-date {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-bottom: 0.75rem;
+}
+
+.cert-desc {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .hero-container {
@@ -1161,6 +1235,11 @@ section {
 
     .work-grid {
         grid-template-columns: 1fr;
+    }
+
+    .certification-card {
+        flex-direction: column;
+        text-align: center;
     }
     
     .hero-image {
