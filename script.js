@@ -89,24 +89,81 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Published Work Filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const workCards = document.querySelectorAll('.work-card');
+    // 6. Published Work Filter (removed - all work shown with Show More toggle)
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    // 7. Tools Accordion
+    document.querySelectorAll('.tool-category').forEach(category => {
+        const toggle = category.querySelector('.tool-category-toggle');
+        const panel = category.querySelector('.tool-category-panel');
 
-            const filter = btn.getAttribute('data-filter');
+        if (!toggle || !panel) return;
 
-            workCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+        toggle.addEventListener('click', () => {
+            const willExpand = toggle.getAttribute('aria-expanded') !== 'true';
+
+            toggle.setAttribute('aria-expanded', String(willExpand));
+            panel.setAttribute('aria-hidden', String(!willExpand));
+
+            if (willExpand) {
+                panel.removeAttribute('inert');
+            } else {
+                panel.setAttribute('inert', '');
+            }
+
+            category.classList.toggle('is-open', willExpand);
+        });
+    });
+
+    // 8. Show More Articles Toggle
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const moreArticles = document.getElementById('more-articles');
+
+    if (showMoreBtn && moreArticles) {
+        const moreText = showMoreBtn.querySelector('.show-more-text');
+        const lessText = showMoreBtn.querySelector('.show-less-text');
+
+        showMoreBtn.addEventListener('click', () => {
+            const isExpanded = showMoreBtn.getAttribute('aria-expanded') === 'true';
+            const willExpand = !isExpanded;
+
+            showMoreBtn.setAttribute('aria-expanded', String(willExpand));
+            moreArticles.setAttribute('aria-hidden', String(!willExpand));
+
+            if (moreText && lessText) {
+                moreText.style.display = willExpand ? 'none' : '';
+                lessText.style.display = willExpand ? '' : 'none';
+            }
+
+            if (willExpand) {
+                moreArticles.style.display = 'grid';
+                // Force reflow for animation
+                moreArticles.offsetHeight;
+            } else {
+                moreArticles.style.display = 'none';
+            }
+        });
+    }
+
+    // 9. Client Projects Accordion
+    document.querySelectorAll('.project-entry').forEach(entry => {
+        const toggle = entry.querySelector('.project-entry-toggle');
+        const panel = entry.querySelector('.project-entry-panel');
+
+        if (!toggle || !panel) return;
+
+        toggle.addEventListener('click', () => {
+            const willExpand = toggle.getAttribute('aria-expanded') !== 'true';
+
+            toggle.setAttribute('aria-expanded', String(willExpand));
+            panel.setAttribute('aria-hidden', String(!willExpand));
+
+            if (willExpand) {
+                panel.removeAttribute('inert');
+            } else {
+                panel.setAttribute('inert', '');
+            }
+
+            entry.classList.toggle('is-open', willExpand);
         });
     });
 });
