@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 714" role="img" aria-label="">
+  <!-- Editorial abstract — Veenasri M portfolio, Core Strengths -->
+  <rect width="840" height="714" fill="#FAF7F2"/>
+
+  <!-- dot grid, right side -->
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="3.2" fill="#E6DFD1"/>
+    </pattern>
+  </defs>
+  <rect x="560" y="0" width="280" height="714" fill="url(#dots)"/>
+
+  <!-- warm sand circle, upper right -->
+  <circle cx="640" cy="118" r="150" fill="#EFE9DC"/>
+
+  <!-- thin bronze ring overlapping it -->
+  <circle cx="706" cy="86" r="44" fill="none" stroke="#7A5C2E" stroke-width="3" opacity="0.85"/>
+  <circle cx="566" cy="178" r="7" fill="#7A5C2E"/>
+
+  <!-- horizon hairline -->
+  <line x1="56" y1="566" x2="784" y2="566" stroke="#141414" stroke-width="1.4" opacity="0.10"/>
+
+  <!-- ink arch outline -->
+  <path d="M 268 714 L 268 268 A 132 132 0 0 1 532 268 L 532 714"
+        fill="none" stroke="#141414" stroke-width="10" stroke-linecap="round" opacity="0.92"/>
+
+  <!-- bronze disc, lower left -->
+  <circle cx="178" cy="462" r="112" fill="#7A5C2E" opacity="0.94"/>
+  <circle cx="178" cy="462" r="112" fill="none" stroke="#141414" stroke-width="1.4" opacity="0.25"/>
+  <circle cx="178" cy="462" r="70" fill="none" stroke="#FAF7F2" stroke-width="1.6" opacity="0.5"/>
+
+  <!-- floating page sheet -->
+  <g>
+    <rect x="414" y="246" width="238" height="292" rx="18" fill="#FFFFFF" stroke="#E8E2D8" stroke-width="1.6"/>
+    <rect x="446" y="288" width="84" height="11" rx="5.5" fill="#7A5C2E"/>
+    <line x1="446" y1="336" x2="620" y2="336" stroke="#141414" stroke-width="8" stroke-linecap="round" opacity="0.16"/>
+    <line x1="446" y1="376" x2="622" y2="376" stroke="#141414" stroke-width="8" stroke-linecap="round" opacity="0.16"/>
+    <line x1="446" y1="416" x2="588" y2="416" stroke="#141414" stroke-width="8" stroke-linecap="round" opacity="0.16"/>
+    <line x1="446" y1="468" x2="500" y2="468" stroke="#7A5C2E" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- plus marks -->
+  <path d="M 132 128 h 34 M 149 111 v 34" stroke="#141414" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M 668 428 h 26 M 681 415 v 26" stroke="#7A5C2E" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- small ink dot accents -->
+  <circle cx="358" cy="130" r="4" fill="#141414" opacity="0.7"/>
+  <circle cx="392" cy="158" r="4" fill="#141414" opacity="0.35"/>
+</svg>
